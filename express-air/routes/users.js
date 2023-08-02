@@ -7,7 +7,24 @@ router.get('/users', function(req, res) {
         { id: 2, name: 'Jane Doe', email: 'jane.doe@example.com' },
         { id: 3, name: 'Bob Smith', email: 'bob.smith@example.com' }
     ];
-    res.json(users);
+    resp = {
+        code: 1,
+        msg: '',
+        data: users
+    }
+    res.json(resp);
+});
+
+router.get('/fetchToken', function(req, res) {
+    const ticket = req.query.ticket;
+    const businessCode = req.query.businessCode;
+    resp = {
+        code: 1,
+        msg: '',
+        data: {accessToken: "259ec440-6396-47e8-af6b-99083f125214"},
+        extra: {ticket, businessCode}
+    };
+    res.json(resp);
 });
 
 router.get('/users/:id', function(req, res) {
