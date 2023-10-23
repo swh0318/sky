@@ -1,4 +1,4 @@
-# sky
-前端个人练习和备忘录
+# webpack-bird
+### 打包js：npx run packjs
 
-idea搭建springmvc开发环境：https://blog.csdn.net/William0318/article/details/90643677
+

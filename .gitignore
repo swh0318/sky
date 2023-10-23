@@ -1,1 +1,3 @@
 /express-sky/node_modules/
+/express-air/node_modules/
+*node_modules*

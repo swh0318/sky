@@ -1,0 +1,23 @@
+{
+  "name": "webpack-sky",
+  "version": "1.0.0",
+  "description": "前端webpack个人练习和备忘录",
+  "main": "index.js",
+  "scripts": {
+    "packjs": "npx webpack ./src/packjs.js --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swh0318/sky.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swh0318/sky/issues"
+  },
+  "homepage": "https://github.com/swh0318/sky#readme",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
