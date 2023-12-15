@@ -1,0 +1,65 @@
+<!--CSS水平居中的方法有以下几种：-->
+<!--对于行内元素，使用 text-align:center; 实现水平居中。-->
+<!--对于确定宽度的块级元素，使用 margin-left:auto; margin-right:auto; 实现水平居中。-->
+<!--对于固定宽度的块级元素，使用绝对定位和 margin-left: (父width-子width）/2 实现水平居中。-->
+<!--通过 display:flex; 实现CSS水平居中，原理是父元素 display:flex; 并设置 flex-direction:column; 而子元素 align-self:center; 。-->
+<!--通过 display:table; 和 margin:auto; 实现CSS水平居中，适合于父元素和子元素的宽度都确定的情况。-->
+<!--通过 transform: scaleX(0.5); 实现CSS水平居中。-->
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .container {
+            border: 1px solid red;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+        .text {
+            border: 1px solid black;
+            width: 100px;
+            margin: 0 auto;
+        }
+        .text1 {
+            border: 3px solid blue;
+            width: 100px;
+            position: absolute;
+            margin-left: calc(50% - 53px);
+        }
+        .container1 {
+            display: table;
+            border: 3px solid green;
+            margin: 500px auto;
+        }
+        .container2 {
+            display: flex;
+            border: 3px solid green;
+            justify-content: center;
+        }
+        .container3 {
+            position: relative;
+            border: 3px solid springgreen;
+        }
+        .center {
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span>对于行内元素，使用 text-align:center; 实现水平居中</span>
+        <div class="text">absolute width</div>
+        <div class="text1">对于固定宽度的块级元素，使用绝对定位和 margin-left: (父width-子width）/2 实现水平居中</div>
+    </div>
+    <div class="container1">table center</div>
+    <div class="container2">flex center
+        <span>1</span>
+        <div>2</div>
+    </div>
+    <div class="container3">
+        <div class="center">通过 transform: scaleX(0.5); 实现CSS水平居中</div>
+    </div>
+</body>
+
