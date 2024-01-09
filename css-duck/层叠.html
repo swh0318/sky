@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+<div>
+    <pre>
+        1、web前端都知道，CSS的来源有三种
+            一、user agent stylesheet 用户代理的默认CSS
+            二、author style sheets 开发人员定义的CSS（前端开发人员写的external-style，embeded-style，inline-style）
+            三、user style sheets 用户自定义的CSS（用户自己写的）
+        2、重要性和来源需要同时考虑，因为二者的结合使用与否会存在不同的顺序
+        (1) 不考虑来源的情况下，！important最高。
+        (2) 在不考虑重要性的前提下，来源优先级顺序为：
+            读者的重要声明
+            创作人员的重要声明
+            创作人员的正常声明
+            读者的正常声明
+            用户代理声明
+        (3) 二者一起考虑的情况下，user(用户)的优先级大于author(作者)的优先级，这样做是试图平衡author(作者)和user(用户)。所以，最终的优先级排序为：
+            user(用户)!important > author(作者)!important > author > user > user agent
+    </pre>
+</div>
+</body>
+</html>

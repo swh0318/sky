@@ -1,0 +1,67 @@
+<!--1. 利用 line-height 实现居中，这种方法适合纯文字类-->
+<!--2. 通过设置父容器 相对定位 ；子级设置 绝对定位，标签通过 margin 实现自适应居中-->
+<!--3. 弹性布局 flex ：父级设置 display: flex; 子级设置 margin 为 auto 实现自适 应居中-->
+<!--4. 父级设置相对定位，子级设置绝对定位，并且通过位移 transform 实现-->
+<!--5. table 布局，父级通过转换成表格形式，然后子级设置 vertical-align 实现。 （需要注意的是：vertical-align: middle 使用的前提条件是内联元素以及 display 值为 table-cell 的元素）。-->
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .border {
+            border: 2px solid red;
+        }
+        .container {
+            border: 2px solid red;
+            height: 200px; /* 设置容器高度 */
+            line-height: 200px; /* 设置容器行高 */
+        }
+        .text {
+            margin-top: 1em;
+            width: 100px;
+            line-height: normal;
+            display: inline-block;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: gray;
+            margin-top: 1em;
+        }
+        .content{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    1、设置父元素利用 line-height 实现居中，这种方法适合纯文字类
+    <span class="border">span 文字</span>
+    <div class="text border">div文字</div>
+</div>
+<div style="height: 200px; border: 2px solid red; margin-top: 1em; display: flex;justify-content:center;align-items:center;">
+    2、设置父元素弹性布局 flex
+    <span style="border: 2px solid blue;">span元素</span>
+    <div style="border: 2px solid blue;">div元素</div>
+</div>
+<div class="box" style="display: flex;">
+    <div class="content" style="margin: auto;">3、flex(父)+margin（子）：水平和垂直居中</div>
+</div>
+<div class="box" style="position: relative;">
+    <div class="content" style="position: absolute; left: calc(50% - 25px); top: calc(50% - 25px);">4、定位方法 position + calc</div>
+</div>
+<div class="box" style="position: relative;">
+    <div class="content" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">5、position + transform</div>
+</div>
+<div class="box" style="border: 1px solid red;">
+    <div class="content" style="margin-left: calc(50% - 25px); margin-top: calc(50% - 25px)">6、margin直接calc定位</div>
+</div>
+<div class="box" style="position: relative;">
+    <div class="content" style="position: absolute; left: 50%; top: 50%; margin-top: -25px; margin-left: -25px;">7、position + margin(2)</div>
+</div>
+<div class="box" style="position: relative;">
+    <div class="content" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;">8、position + margin(3)</div>
+</div>
+</body>
+
